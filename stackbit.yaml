@@ -1,0 +1,122 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+publishDir: _site
+dataDir: _data
+pagesDir: ''
+models:
+  post:
+    type: page
+    label: Post
+    folder: _posts
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: list
+        name: categories
+        label: Categories
+        items:
+          type: string
+      - type: image
+        name: image
+        label: Image
+  project:
+    type: page
+    label: Project
+    folder: _project
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: slug
+        label: Slug
+  category:
+    type: page
+    label: Category
+    folder: category
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: categories
+        label: Categories
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: permalink
+        label: Permalink
+  page_1:
+    type: page
+    label: Page 1
+    match: '*'
+    exclude:
+      - projects.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: permalink
+        label: Permalink
+  page_2:
+    type: page
+    label: Page 2
+    match: '*'
+    exclude:
+      - about.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: permalink
+        label: Permalink
+  projects:
+    type: data
+    label: Projects
+    file: projects.json
+    isList: true
+    items:
+      type: object
+      fields:
+        - type: string
+          name: slug
+          label: Slug
+        - type: string
+          name: name
+          label: Name
+        - type: image
+          name: image
+          label: Image
+        - type: string
+          name: url
+          label: Url
+        - type: string
+          name: date
+          label: Date
+        - type: list
+          name: tags
+          label: Tags
+          items:
+            type: string
